@@ -1,0 +1,3 @@
+[submodule "lib/cmake-utils"]
+	path = lib/cmake-utils
+	url = git@github.com:euclidean-dreams/cmake-utils.git
