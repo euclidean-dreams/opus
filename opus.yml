@@ -1,0 +1,5 @@
+percipiaEndpoint: ipc:///tmp/percipia
+percipiaWidth: 256
+percipiaHeight: 166
+pixelSize: 10
+fullscreen: true
