@@ -14,6 +14,8 @@ Opus::Opus(
     if (initializationResult != 0) {
         throw SDLFailure{};
     }
+
+    SDL_SetHint(SDL_HINT_RENDER_VSYNC, "1");
     SDL_SetHint(SDL_HINT_VIDEO_X11_NET_WM_PING, "0");
     if (constants.fullscreen) {
         window = SDL_CreateWindow("euclid", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, windowWidth,

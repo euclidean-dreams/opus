@@ -12,19 +12,19 @@ void bump_axiom(vec<float> &axioms, int index, Uint16 keymod) {
         axioms[index] += 0.1;
     }
 
-    if (axioms[index] > 1.0) {
-        axioms[index] = 1.0;
+    if (axioms[index] >= 1.0) {
+        axioms[index] = 0.999;
     }
 }
 
 void blead_axiom(vec<float> &axioms, int index, Uint16 keymod) {
     if (keymod & KMOD_LSHIFT) {
-        axioms[index] += 0.01;
+        axioms[index] -= 0.01;
     } else {
-        axioms[index] += 0.1;
+        axioms[index] -= 0.1;
     }
-    if (axioms[index] < 0.0) {
-        axioms[index] = 0.0;
+    if (axioms[index] <= 0.0) {
+        axioms[index] = 0.001;
     }
 }
 
@@ -150,6 +150,10 @@ int bootstrap(std::string configFilePath) {
                 send_phenomenon(*socket, 104);
 
                 // extra
+            } else if (symbol == SDLK_BACKSLASH) {
+                for (float &axiom: axioms) {
+                    axiom = 0.5;
+                }
             } else if (symbol == SDLK_SLASH and SDLK_LSHIFT & event.key.keysym.mod) {
                 send_phenomenon(*socket, 1000);
             }
