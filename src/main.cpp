@@ -61,16 +61,17 @@ int bootstrap(std::string configFilePath) {
     );
 
     vec<float> axioms;
-    axioms.push_back(0.9);
-    axioms.push_back(0.7);
-    axioms.push_back(0.3);
-    axioms.push_back(0.9);
     axioms.push_back(0.5);
-    axioms.push_back(0.1);
-    axioms.push_back(0.25);
-    axioms.push_back(0.25);
-    axioms.push_back(0.3);
-    axioms.push_back(0.2);
+    axioms.push_back(0.5);
+    axioms.push_back(0.5);
+    axioms.push_back(0.5);
+    axioms.push_back(0.5);
+    axioms.push_back(0.5);
+    axioms.push_back(0.5);
+    axioms.push_back(0.5);
+    axioms.push_back(0.5);
+    axioms.push_back(0.5);
+    axioms.push_back(0.5);
 
     SDL_Event event;
     bool running = true;
@@ -102,6 +103,8 @@ int bootstrap(std::string configFilePath) {
                 bump_axiom(axioms, 8, keymod);
             } else if (symbol == SDLK_p) {
                 bump_axiom(axioms, 9, keymod);
+            } else if (symbol == SDLK_LEFTBRACKET) {
+                bump_axiom(axioms, 10, keymod);
 
                 // blead
             } else if (symbol == SDLK_a) {
@@ -124,6 +127,8 @@ int bootstrap(std::string configFilePath) {
                 blead_axiom(axioms, 8, keymod);
             } else if (symbol == SDLK_SEMICOLON) {
                 blead_axiom(axioms, 9, keymod);
+            } else if (symbol == SDLK_QUOTE) {
+                blead_axiom(axioms, 10, keymod);
 
                 // micromode
             } else if (symbol == SDLK_1) {
