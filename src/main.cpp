@@ -132,15 +132,25 @@ int bootstrap(std::string configFilePath) {
 
                 // micromode
             } else if (symbol == SDLK_1) {
-                send_phenomenon(*socket, 0);
-            } else if (symbol == SDLK_2) {
                 send_phenomenon(*socket, 1);
-            } else if (symbol == SDLK_3) {
+            } else if (symbol == SDLK_2) {
                 send_phenomenon(*socket, 2);
-            } else if (symbol == SDLK_4) {
+            } else if (symbol == SDLK_3) {
                 send_phenomenon(*socket, 3);
-            } else if (symbol == SDLK_5) {
+            } else if (symbol == SDLK_4) {
                 send_phenomenon(*socket, 4);
+            } else if (symbol == SDLK_5) {
+                send_phenomenon(*socket, 5);
+            } else if (symbol == SDLK_6) {
+                send_phenomenon(*socket, 6);
+            } else if (symbol == SDLK_7) {
+                send_phenomenon(*socket, 7);
+            } else if (symbol == SDLK_8) {
+                send_phenomenon(*socket, 8);
+            } else if (symbol == SDLK_9) {
+                send_phenomenon(*socket, 9);
+            } else if (symbol == SDLK_0) {
+                send_phenomenon(*socket, 10);
 
                 // macromode
             } else if (symbol == SDLK_z) {
